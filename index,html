@@ -1,188 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>나의 깃허브 페이지</title>
-  <meta name="description" content="간단한 GitHub Pages용 템플릿" />
-  <style>
-    :root{
-      --bg:#f7f7f8; --card:#fff; --text:#111; --muted:#555; --accent:#2563eb;
-      --radius:12px; --maxw:900px;
-    }
-    [data-theme="dark"]{
-      --bg:#0b1020; --card:#0f1724; --text:#e6eef8; --muted:#9fb0d7; --accent:#60a5fa;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR","Helvetica Neue",Arial;
-      background:linear-gradient(180deg,var(--bg),#fff 1200px); color:var(--text);
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      padding:24px; display:flex; justify-content:center;
-    }
-    .wrap{width:100%; max-width:var(--maxw);}
-
-    header{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:18px;}
-    .brand{display:flex; gap:12px; align-items:center;}
-    .logo{
-      width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);
-      display:grid;place-items:center;color:white;font-weight:700;font-size:18px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.08);
-    }
-    nav{display:flex; gap:12px; align-items:center; flex-wrap:wrap;}
-    nav a{color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:8px;}
-    nav a:hover{color:var(--text); background:rgba(0,0,0,0.04)}
-    .controls{display:flex; gap:8px; align-items:center;}
-
-    main{display:grid; grid-template-columns:1fr 320px; gap:20px; align-items:start;}
-    @media (max-width:880px){ main{grid-template-columns:1fr} }
-
-    .card{background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:0 6px 20px rgba(2,6,23,0.06);}
-    .hero{display:flex;flex-direction:column;gap:12px;}
-    .title{font-size:22px;margin:0}
-    .subtitle{color:var(--muted);margin:0;font-size:14px}
-
-    .post{margin-bottom:14px;border-radius:10px;overflow:hidden}
-    .post header{padding:14px 16px;border-bottom:1px solid rgba(0,0,0,0.04)}
-    .post h3{margin:0;font-size:18px}
-    .post p{margin:12px 16px 18px 16px;color:var(--muted);font-size:14px}
-
-    aside .card{position:sticky; top:24px;}
-    .meta{font-size:13px;color:var(--muted)}
-    .btn{display:inline-block;padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:600;}
-    .btn-primary{background:var(--accent); color:white}
-    .small{font-size:13px;color:var(--muted)}
-
-    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
-    /* mobile menu */
-    .menu-toggle{display:none}
-    @media (max-width:560px){
-      nav{display:none}
-      .menu-toggle{display:inline-block}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>프로젝트 구상 사이트</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #333;
+            border-left: 5px solid #4a90e2;
+            padding-left: 10px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap" id="page">
-    <header>
-      <div class="brand">
-        <div class="logo">GH</div>
-        <div>
-          <div style="font-weight:700">나의 깃허브 페이지</div>
-          <div class="small">간단한 정적 사이트 템플릿 • index.htm</div>
-        </div>
-      </div>
+    <div class="container">
+        <h1>프로젝트 구상용 사이트</h1>
 
-      <div class="controls">
-        <button class="menu-toggle btn" onclick="toggleNav()">메뉴</button>
-        <nav id="mainNav">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#posts">Posts</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <button class="btn" id="themeBtn" onclick="toggleTheme()">다크모드</button>
-      </div>
-    </header>
+        <h2>진로 설정</h2>
+        <p>
+            게임 디렉터 및 프로그래머를 목표로 하여 게임 기획과 개발 전반을
+            이해하고 직접 구현할 수 있는 능력을 기른다.
+        </p>
 
-    <main>
-      <section>
-        <div class="card hero" id="home">
-          <h1 class="title">안녕하세요 — 깃허브 페이지에 오신 것을 환영합니다</h1>
-          <p class="subtitle">이 템플릿은 정적 HTML(.htm) 한 파일로 구성되어 있어 GitHub Pages에 바로 올릴 수 있습니다.</p>
+        <h2>페이지 구성 의도</h2>
+        <p>
+            개인 프로젝트 및 아이디어를 정리하고,
+            향후 게임 개발 방향을 구체화하기 위한 프로젝트 구상용 사이트이다.
+        </p>
 
-          <div style="margin-top:14px">
-            <a class="btn btn-primary" href="#posts">최근 글 보기</a>
-            <a class="btn" href="#about" style="margin-left:8px">템플릿 사용법</a>
-          </div>
-        </div>
+        <h2>핵심 역량 분석</h2>
+        <p>
+            아이디어 기획 능력과 디자인 감각을 바탕으로
+            게임 시스템과 콘텐츠를 창의적으로 설계할 수 있다.
+        </p>
 
-        <div id="posts" style="margin-top:16px">
-          <!-- 샘플 게시글들 -->
-          <article class="card post">
-            <header>
-              <h3>샘플 포스트: 첫 페이지 만들기</h3>
-              <div class="meta">2025-12-10 · 개발 · 초안</div>
-            </header>
-            <p>이곳에 글 내용을 넣으세요. 정적 HTML 파일이므로 새 글은 직접 이 파일에 추가하거나 별도의 파일을 만들어 링크하면 됩니다.</p>
-          </article>
-
-          <article class="card post">
-            <header>
-              <h3>샘플 포스트: 배포 방법</h3>
-              <div class="meta">2025-12-10 · 배포</div>
-            </header>
-            <p>GitHub 리포지토리 루트에 index.htm을 업로드하고, 리포지토리 Settings → Pages에서 'main' 브랜치와 '/' 루트(또는 gh-pages 브랜치)를 선택하세요.</p>
-          </article>
-        </div>
-
-        <footer class="card" style="margin-top:16px">
-          <div class="small">© <span id="year"></span> 내 이름 — 만든이: 이덩찬</div>
-        </footer>
-      </section>
-
-      <aside>
-        <div class="card">
-          <h4 style="margin:0 0 8px 0">사이드바</h4>
-          <div class="small" style="margin-bottom:8px">기술 스택</div>
-          <ul class="small" style="padding-left:18px;margin-top:0">
-            <li>HTML / CSS / JS</li>
-            <li>GitHub Pages (정적 호스팅)</li>
-            <li>Jekyll 없이 작동</li>
-          </ul>
-
-          <hr style="margin:12px 0;border:none;border-top:1px solid rgba(0,0,0,0.04)">
-
-          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-            <a class="btn btn-primary" href="#" onclick="alert('깃허브 링크를 여기에 연결하세요')">깃허브로 이동</a>
-            <a class="btn" href="#contact">연락하기</a>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:12px">
-          <h4 style="margin:0 0 8px 0">빠른 설정</h4>
-          <ol class="small" style="padding-left:18px;margin:0">
-            <li>이 파일을 `index.htm`으로 저장</li>
-            <li>GitHub 리포지토리 루트에 업로드</li>
-            <li>리포지토리 Settings → Pages에서 브랜치 선택</li>
-            <li>URL 접속 (예: https://username.github.io/repo)</li>
-          </ol>
-        </div>
-      </aside>
-    </main>
-  </div>
-
-  <script>
-    // 기본 연도 표시
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // 테마 토글 (로컬 스토리지 저장)
-    (function(){
-      const saved = localStorage.getItem('theme');
-      if(saved) document.documentElement.setAttribute('data-theme', saved);
-      updateThemeBtn();
-    })();
-
-    function toggleTheme(){
-      const cur = document.documentElement.getAttribute('data-theme');
-      const next = cur === 'dark' ? '' : 'dark';
-      if(next) document.documentElement.setAttribute('data-theme', next);
-      else document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('theme', next);
-      updateThemeBtn();
-    }
-    function updateThemeBtn(){
-      const btn = document.getElementById('themeBtn');
-      btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '라이트모드' : '다크모드';
-    }
-
-    // 모바일 메뉴
-    function toggleNav(){
-      const nav = document.getElementById('mainNav');
-      if(nav.style.display === 'flex' || nav.style.display === '') nav.style.display = 'none';
-      else nav.style.display = 'flex';
-    }
-  </script>
+        <h2>향후 계획</h2>
+        <p>
+            개인 게임 프로젝트를 구상하고 제작하며,
+            포트폴리오로 활용할 수 있는 결과물을 지속적으로 개발할 예정이다.
+        </p>
+    </div>
 </body>
 </html>
